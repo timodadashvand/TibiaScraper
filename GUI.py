@@ -4,11 +4,12 @@ from TibiaWebscraper import TibiaWebscraper
 
 # TODO Calc global top players (if lvl > prevLvl = highest)
 # TODO List top players: level;server;name
+# TODO Listbox + scrollbar not fixed position. Fix/display the button
 
 class GUI(Frame):
     def __init__(self, master):
         frame = Frame.__init__(self, master)
-        self.grid()
+        # self.grid()
 
         scrollbar = Scrollbar(frame, orient=VERTICAL)
         # self.listbox.pack(side=LEFT, fill=BOTH, expand=1)
@@ -22,6 +23,7 @@ class GUI(Frame):
 
         self.btnListTopPlayers = Button(self, text = "Show char info")#, command = self.generate_top_players) Actionbutton to be developed
         self.btnListTopPlayers.grid(row = 0, column = 0, sticky = W)
+        self.btnListTopPlayers.pack()
 
         self.generate_top_players()
 
